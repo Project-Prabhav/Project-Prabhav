@@ -74,6 +74,7 @@ body{
     position: absolute;
     width: 6vw;
     margin: 34vh 2vw 0 12vw !important;
+
 }
 .nav-buttons button:hover {
     background-color: white;
@@ -126,8 +127,8 @@ body{
     flex-direction: column;
 }
 .dept-name h1{
-    font-size:1.75vw;
-    margin:1.5vh 2vw;
+    font-size:1.9vw;
+    margin:1.25vh 2vw;
 }
 .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
     width: 0;
@@ -312,6 +313,38 @@ footer{
         width:100vw;
         height:100vh;
     }
+    .founder{
+        margin:2vh auto -5vh auto;
+        font-size:7vw;
+        font-weight: 600;
+    }
+    .project{
+        margin:2vh auto 0 auto;
+        font-size:8vw;
+        text-decoration:2px underline;
+        text-underline-offset:4px;
+        font-weight: 600;
+    }
+    .icons .new-worker {
+        width: 8vw;
+        height: 7vh;
+        margin: 1vh 0 3vh 4vw;
+    }
+    .department-3 .new-worker, .department-4 .new-worker {
+        margin-top:-1vh !important;
+    }
+    .nav-buttons {
+        width: fit-content;
+    }
+    .nav-buttons button, .nav-buttons-1 button {
+        width: 10vw;
+        height: 5vh;
+        font-size: 8vw;
+        border-radius: 6vw;
+    }
+    .nav-buttons-1 {
+        width: fit-content;
+    }
     .org-content{
         display:flex;
         flex-direction: column !important;
@@ -320,14 +353,31 @@ footer{
         width:92vw;
         height:6vh;
     }
+    .dept-name h1{
+        font-size:6.5vw !important;
+        margin:1.2vh 5vw !important;
+    }
     h1{
         font-size:8vw !important;
         justify-content:center;
         margin:0.7vh 0 1vh 4vw !important;
     }
+    @media (min-width:401px) {
+        .dept-details, .dept-2-details, .dept-3-details, .dept-4-details{
+            width:85.5vw !important;
+            height:38vh !important;
+            display:none;
+        }
+        .nav-buttons-1 {
+            margin: 32vh 8vw 12.5vh 40vw !important;
+
+        }
+        .nav-buttons { 
+            margin: 32vh 2vw 0 60vw !important;
+        }
+    }
     .dept-details, .dept-2-details, .dept-3-details, .dept-4-details{
         width:85.5vw !important;
-        height:32vh !important;
         display:none;
     }
     .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
@@ -423,11 +473,35 @@ footer{
           font-size:14vw !important;
           margin-top:3vh !important;
         }
+        @media (max-width:400px){
+            .nav-buttons-1 {
+                margin: 35vh 8vw 0 40vw !important;
+            }
+            .nav-buttons { 
+                margin: 35vh 2vw 0 60vw !important;
+            }
+        }
     }
     @media (max-width:380px){
         .text-box h1{
           font-size:15vw !important;
           margin-top:4vh !important;
+        }
+        @media (min-width:360px) {
+            .nav-buttons-1 {
+                margin: 34vh 8vw 0 40vw !important;
+            }
+            .nav-buttons { 
+                margin: 34.5vh 2vw 0 60vw !important;
+            }
+        }
+        @media (max-width:359px) {
+            .nav-buttons-1 {
+                margin: 37vh 8vw 0 40vw !important;
+            }
+            .nav-buttons { 
+                margin: 37vh 2vw 0 60vw !important;
+            }
         }
     }
     .header{
