@@ -142,3 +142,56 @@ window.addEventListener('resize', () => {
     console.log("Window height:", windowHeight, "Window width:", windowWidth);
     console.log("Inside exclusion interval:", excludedInterval);
 });
+
+// Department Height In Mobiles
+function adjustDeptHeights() {
+    const deptClasses = [
+        '.dept-details',
+        '.dept-2-details',
+        '.dept-3-details',
+        '.dept-4-details'
+    ];
+
+    let multiplier = 0.048; // Default multiplier
+
+    // Determine the multiplier based on the screen width
+    if (window.innerWidth > 390) {
+        multiplier = 0.048;
+    } else if (window.innerWidth <= 390 && window.innerWidth > 370) {
+        multiplier = 0.06;
+    } else if (window.innerWidth <= 370 && window.innerWidth >= 360) {
+        multiplier = 0.055;
+    } else if (window.innerWidth < 360) {
+        multiplier = 0.048;
+    }
+
+    console.log(`Current screen width: ${window.innerWidth}px`);
+    console.log(`Multiplier used: ${multiplier}`);
+
+    // Apply the height adjustment based on the determined multiplier
+    if (window.matchMedia('(max-width: 400px)').matches) {
+        console.log('Applying height adjustments for screen width <= 400px');
+        deptClasses.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                element.style.cssText = ''; // Reset any previous inline styles
+                const contentHeight = element.scrollHeight;
+                const newHeight = `${contentHeight + (multiplier * window.innerHeight)}vh`;
+                element.style.setProperty('height', newHeight, 'important'); // Set height with !important
+                console.log(`Set height for ${selector} to ${newHeight}`);
+            });
+        });
+    } else {
+        console.log('Resetting heights for screen width > 400px');
+        deptClasses.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                element.style.setProperty('height', '', 'important'); // Reset height to auto with !important
+                console.log(`Reset height for ${selector} to auto`);
+            });
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', adjustDeptHeights);
+window.addEventListener('resize', adjustDeptHeights);
