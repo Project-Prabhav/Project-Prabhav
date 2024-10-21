@@ -227,61 +227,56 @@ function formatExpiryDate(input) {
 
 // More People in Department
 document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('#department-3 .inner-data-3');
-    const icons = document.querySelectorAll('#department-3 .icons img'); // Select all images within #department-3
     const showCount = 3;
-    let currentStart = 0;
 
-    function updateDisplay() {
-        items.forEach((item, index) => {
-            item.style.display = (index >= currentStart && index < currentStart + showCount) ? 'block' : 'none';
-        });
-        
-        // Update icons display
-        updateIcons();
-    }
+    const departments = [2, 3, 4]; // Array of department numbers
 
-    function updateIcons() {
-        icons.forEach((icon, index) => {
-            if (currentStart === 0) {
-                icon.style.display = (index < showCount) ? 'block' : 'none'; // Show first three images initially
-            } else if (currentStart + showCount >= items.length) {
-                icon.style.display = (index === 3) ? 'block' : 'none'; // Show only the new image if it's the last set
-            } else {
-                icon.style.display = 'none'; // Hide images when > is clicked
+    departments.forEach(dept => {
+        const items = document.querySelectorAll(`#department-${dept} .inner-data-${dept}`);
+        const icons = document.querySelectorAll(`#department-${dept} .icons img`);
+        let currentStart = 0;
+
+        function updateDisplay() {
+            items.forEach((item, index) => {
+                item.style.display = (index >= currentStart && index < currentStart + showCount) ? 'block' : 'none';
+            });
+            updateIcons();
+        }
+
+        function updateIcons() {
+            icons.forEach((icon, index) => {
+                if (currentStart === 0) {
+                    icon.style.display = (index < showCount) ? 'block' : 'none';
+                } else if (currentStart + showCount >= items.length) {
+                    icon.style.display = (index === 3) ? 'block' : 'none'; // Show last icon when at the end
+                } else {
+                    icon.style.display = 'none';
+                }
+
+                // Show new worker images when next is clicked
+                const newWorkerImages = document.querySelectorAll(`#department-${dept} .new-worker`);
+                if (currentStart > 0 && currentStart + showCount <= items.length) {
+                    newWorkerImages.forEach((img, imgIndex) => {
+                        img.style.display = imgIndex < (currentStart + showCount) - items.length ? 'block' : 'block';
+                    });
+                }
+            });
+        }
+
+        document.getElementById(`prevBtn${dept}`).onclick = () => {
+            if (currentStart > 0) {
+                currentStart -= showCount;
+                updateDisplay();
             }
-        });
-    }
+        };
 
-    // Initialize display
-    updateDisplay();
+        document.getElementById(`nextBtn${dept}`).onclick = () => {
+            if (currentStart + showCount < items.length) {
+                currentStart += showCount;
+                updateDisplay();
+            }
+        };
 
-    // Button event handlers
-    document.getElementById('prevBtn').onclick = () => {
-        if (currentStart > 0) {
-            currentStart -= showCount;
-            updateDisplay();
-        }
-    };
-
-    document.getElementById('nextBtn').onclick = () => {
-        if (currentStart + showCount < items.length) {
-            currentStart += showCount;
-            updateDisplay();
-        }
-    };
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const deptClasses = ['.dept-details', '.dept-2-details', '.dept-3-details', '.dept-4-details'];
-
-    deptClasses.forEach(deptClass => {
-        const elements = document.querySelectorAll(deptClass);
-        
-        elements.forEach(element => {
-            const contentHeight = element.scrollHeight; // Get the height of the content
-            element.style.height = `${contentHeight + 5 * window.innerHeight / 100}px`; // Set height to fit-content + 5vh
-        });
+        updateDisplay(); // Initialize display for each department
     });
 });

@@ -11,48 +11,75 @@ body{
     font-size: 15vw !important;
     text-align: center;
 }
-.web-2{
-    margin:5vh auto 7vh auto;
+.founder{
+    text-align:center;
+    margin:10vh auto -5vh auto;
+    font-size:4.5vw;
+    font-family:  "Merriweather", sans-serif;
+    font-weight: 400;
+    color: rgb(22, 31, 136);
+}
+.project{
+    text-align:center;
+    margin:2vh auto -10vh auto;
+    font-size:6vw;
+    text-decoration:5px underline;
+    text-underline-offset:8px;
+    font-family:  "Merriweather", sans-serif;
+    font-weight: 400;
+    color: rgb(22, 31, 136);
 }
 /* More People Department */
-
-.inner-data-3, .inner-data-2, .inner-data, .inner-data-4 {
-    display: none;
+.inner-data-2, .inner-data-3, .inner-data-4 {
+    display: none; /* Hide all initially */
 }
 
-.inner-data-3.active, .inner-data-2.active, .inner-data.active, .inner-data-4.active{
-    display: block;
+.inner-data-2.active, .inner-data-3.active, .inner-data-4.active {
+    display: block; /* Display active elements */
 }
-.icons img{
-    display: none;
+
+.department-4 .inner-data-4:nth-child(-n+3) {
+    display: block; 
+}
+
+.icons img {
+    display: none; /* Hide all icons initially */
 }
 
 .icons img:nth-child(-n+3) {
-    display: block;
+    display: block; /* Show first three icons */
 }
+
 .icons .new-worker {
     display: none;
-    width:2.2vw;
-    height:8vh;
-    margin-top:0;
-    margin-left:2vw;
+    width: 2.2vw;
+    height: 8vh;
+    margin: 0 0 3vh 2vw;
 }
-.nav-buttons{
-    position:absolute;
-    width:6vw;
-    margin:34vh 2vw 0 18vw !important;
+
+.nav-buttons {
+    position: absolute;
+    width: 6vw;
+    margin: 34vh 2vw 0 18vw !important;
 }
-#prevBtn, #nextBtn {
-    border:none;
-    width:2.3vw;
-    height:5vh;
-    font-size:2vw;
-    border-radius:2vw;
+
+.nav-buttons button, .nav-buttons-1 button {
+    border: none;
+    width: 2.3vw;
+    height: 5vh;
+    font-size: 2vw;
+    border-radius: 2vw;
 }
-#prevBtn:hover, #nextBtn:hover{
-    background-color:white;
+.nav-buttons-1 {
+    position: absolute;
+    width: 6vw;
+    margin: 34vh 2vw 0 12vw !important;
 }
-/* Done*/
+.nav-buttons button:hover {
+    background-color: white;
+}
+
+/* Done */
 .comp-logo{
     margin-top:-2vh !important;
     margin-left:-0.5vw !important;
@@ -98,6 +125,10 @@ body{
     display:flex;
     flex-direction: column;
 }
+.dept-name h1{
+    font-size:1.75vw;
+    margin:1.5vh 2vw;
+}
 .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
     width: 0;
     height: 0;
@@ -140,7 +171,7 @@ body{
 }
 .dept-details, .dept-2-details, .dept-3-details, .dept-4-details{
     width:24vw !important;
-    height:fit-content;
+    height:40vh;
     background-color:rgb(226, 225, 225);
     display:inline-flex;
 }
@@ -196,7 +227,7 @@ body{
 }
 .chart{
     height: 60vh;
-    margin: 20vh 1vw 0 4vw;
+    margin: 25vh 1vw 0 4vw;
 }
 .icons, .icons-2{
     display:flex;
