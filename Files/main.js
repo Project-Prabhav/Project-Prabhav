@@ -16,16 +16,6 @@ function animateCounter(counter) {
 
     updateCounter();
 }
-//Function 
-function setSectionHeight() {
-    const section = document.getElementById('key-enablers-section');
-    const contentHeight = section.scrollHeight; // Get the height of the content
-    const additionalHeight = window.innerHeight * 0.05; // Calculate 5vh
-    section.style.height = `${contentHeight + additionalHeight}px`; // Set the height
-}
-
-window.addEventListener('resize', setSectionHeight); // Adjust height on resize
-window.addEventListener('DOMContentLoaded', setSectionHeight); // Initial call
 
 // Function to check if the element is in the viewport
 function isInViewport(element) {
