@@ -32,7 +32,7 @@ function setSectionHeight() {
         console.log('New Height:', newHeight);
 
         // Set the height using a dynamically created CSS rule
-        section.style.setProperty('height', `${newHeight}px`, 'important');
+        section.style.setProperty('height', `${newHeight}vh`, 'important');
     } else {
         section.style.removeProperty('height'); // Reset height when outside the range
     }
