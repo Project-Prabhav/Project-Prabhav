@@ -149,12 +149,10 @@ function adjustDeptHeights() {
     let multiplier = 0.048; // Default multiplier
 
     // Determine the multiplier based on the screen width
-    if (window.innerWidth > 390 && window.innerWidth <=400) {
+    if (window.innerWidth > 390) {
         multiplier = 0.048;
     } else if (window.innerWidth <= 390 && window.innerWidth > 370) {
         multiplier = 0.06;
-    } else if (window.innerWidth <= 430 && window.innerWidth > 400) {
-        multiplier = 0.055;
     } else if (window.innerWidth <= 370 && window.innerWidth >= 360) {
         multiplier = 0.055;
     } else if (window.innerWidth < 360 && window.innerWidth >330) {
@@ -164,7 +162,7 @@ function adjustDeptHeights() {
     }
 
     // Apply the height adjustment based on the determined multiplier
-    if (window.matchMedia('(max-width: 430px)').matches) {
+    if (window.matchMedia('(max-width: 400px)').matches) {
         deptClasses.forEach(selector => {
             const elements = document.querySelectorAll(selector);
             elements.forEach(element => {
