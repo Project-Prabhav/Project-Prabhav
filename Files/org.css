@@ -13,7 +13,7 @@ body{
 }
 .founder{
     text-align:center;
-    margin:10vh auto -5vh auto;
+    margin:2vh auto -4vh auto;
     font-size:4.5vw;
     font-family:  "Merriweather", sans-serif;
     font-weight: 400;
@@ -21,7 +21,7 @@ body{
 }
 .project{
     text-align:center;
-    margin:2vh auto -10vh auto;
+    margin:2vh auto 0 auto;
     font-size:6vw;
     text-decoration:5px underline;
     text-underline-offset:8px;
@@ -557,7 +557,11 @@ footer{
         height:7vh;
         margin-left:12vw;
     }
-    .dept-name h1, .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
+    .dept-name h1 {
+        font-size:5.5vw;
+        margin:1vh 0 0 4vw;
+    }
+    .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
         font-size:6.5vw;
         margin:0.6vh 0 0 4vw;
     }
@@ -650,6 +654,9 @@ footer{
         width:33vw;
         height:55vh;
     }
+    .dept-col h1, .dept-col-2 h1{
+        margin-top:1.5vh !important;
+    }
 }
 @media (max-width:400px){
     .level-header{
@@ -687,6 +694,10 @@ footer{
         h1{
             font-size:9vw !important;
             margin-top:1.2vh !important;
+        }
+        .dept-name h1{
+            font-size:7vw !important;
+            margin-top:1.7vh !important;
         }
     }
     @media (min-width:360px){
