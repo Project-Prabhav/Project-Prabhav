@@ -104,14 +104,25 @@ function toggleMenuMob(event) {
         icon.classList.remove("active");
         overlay.style.display = "none";
         body.classList.remove("no-scroll");
+
+        // Restore original scroll position
+        window.scrollTo(0, parseInt(body.dataset.scrollY || '0'));
+        body.style.position = "";
+        body.style.top = "";
     } else {
         menu.style.display = "block";
         icon.classList.add("active");
         overlay.style.display = "block";
+
+        // Lock the scroll position
+        body.dataset.scrollY = window.scrollY;
+        body.style.position = "fixed";
+        body.style.top = `-${body.dataset.scrollY}px`;
         body.classList.add("no-scroll");
     }
     event.stopPropagation();
 }
+
 document.addEventListener("click", function(event) {
     var menu = document.getElementById("menu");
     var icon = document.getElementById("menuIcon");
@@ -121,8 +132,14 @@ document.addEventListener("click", function(event) {
         icon.classList.remove("active");
         document.getElementById("overlay").style.display = "none";
         document.body.classList.remove("no-scroll");
+
+        // Restore scroll when menu closes
+        window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0'));
+        document.body.style.position = "";
+        document.body.style.top = "";
     }
 });
+
 // Impact Section Height Adjustments (Media Width 1000-1399px)
 function adjustSectHeight() {
     const sects = document.querySelectorAll('.sect');

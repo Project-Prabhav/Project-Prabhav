@@ -629,17 +629,17 @@ footer{
     margin-left:45vw;
   }
   .roll{
-    height:22vh;
+    height:22vh !important;
     width:35vw;
     margin-top:5vh;
   }
   .rill{
-    height:22vh;
+    height:22vh !important;
     width:45vw;
     margin-right:3vw;
   }
   .rooll{
-    height:20vh;
+    height:20vh !important;
     width:35vw;
   }
   .ps, .ps-inner, .ps-inner-2{
