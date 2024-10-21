@@ -523,14 +523,9 @@ footer{
         font-weight: 600;
     }
     .project{
-        text-align:center;
         margin:2vh auto 0 auto;
         font-size:8vw;
-        text-decoration:5px underline;
-        text-underline-offset:8px;
-        font-family:  "Merriweather", sans-serif;
         font-weight: 600;
-        color: rgb(22, 31, 136);
     }
     .icons .new-worker {
         width: 5vw;

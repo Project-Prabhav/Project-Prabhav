@@ -154,6 +154,8 @@ function adjustDeptHeights() {
         multiplier = 0.055;
     } else if (window.innerWidth < 360 && window.innerWidth >330) {
         multiplier = 0.048;
+    } else if (window.innerWidth < 330) {
+        multiplier = 0.057;
     }
 
     // Apply the height adjustment based on the determined multiplier
