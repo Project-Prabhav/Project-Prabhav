@@ -9,7 +9,7 @@ function switchDepartments() {
     const height = window.innerHeight;
     const mediaQuery = window.matchMedia("(max-width: 1050px)");
 
-    const excludedInterval = (width >= 1000) && (height >= 600 && height <= 720);
+    const excludedInterval = (width >= 1000) && (height >= 600 && height <= 750);
 
     if (mediaQuery.matches && !excludedInterval) {
         // Move department-2, then the image, and finally department-3
@@ -78,7 +78,7 @@ function repositionTriangles() {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    const excludedInterval = (width >= 1000) && (height >= 600 && height <= 720);
+    const excludedInterval = (width >= 1000) && (height >= 600 && height <= 750);
 
     if (excludedInterval && mediaQuery.matches) {
         if (deptName2.previousSibling !== triangle2) {
@@ -152,7 +152,7 @@ function adjustDeptHeights() {
         multiplier = 0.06;
     } else if (window.innerWidth <= 370 && window.innerWidth >= 360) {
         multiplier = 0.055;
-    } else if (window.innerWidth < 360) {
+    } else if (window.innerWidth < 360 && window.innerWidth >330) {
         multiplier = 0.048;
     }
 
