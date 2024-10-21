@@ -16,36 +16,16 @@ function animateCounter(counter) {
 
     updateCounter();
 }
-
+//Function 
 function setSectionHeight() {
     const section = document.getElementById('key-enablers-section');
-
-    // Check if the viewport width is within the specified range
-    if (window.innerWidth >= 320 && window.innerWidth <= 749) {
-        const contentHeight = section.scrollHeight; // Get the height of the content
-        const newHeight = contentHeight; // Calculate total height
-
-        // Log for debugging
-        console.log('Content Height:', contentHeight);
-        console.log('Additional Height (5vh):', additionalHeight);
-        console.log('New Height:', newHeight);
-
-        // Set height using !important to override any CSS styles
-        section.style.setProperty('height', `${newHeight}px`, 'important');
-    } else {
-        section.style.removeProperty('height'); // Reset height when outside the range
-    }
+    const contentHeight = section.scrollHeight; // Get the height of the content
+    const additionalHeight = window.innerHeight * 0.05; // Calculate 5vh
+    section.style.height = `${contentHeight + additionalHeight}px`; // Set the height
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    setSectionHeight(); // Initial call
-});
-
-// Remove the height property when the page unloads to reset it
-window.addEventListener('unload', () => {
-    const section = document.getElementById('key-enablers-section');
-    section.style.removeProperty('height');
-});
+window.addEventListener('resize', setSectionHeight); // Adjust height on resize
+window.addEventListener('DOMContentLoaded', setSectionHeight); // Initial call
 
 // Function to check if the element is in the viewport
 function isInViewport(element) {
