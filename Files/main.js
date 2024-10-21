@@ -44,13 +44,6 @@ function setSectionHeight() {
     }
 }
 
-// Debounce the resize event to avoid too many calculations
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(setSectionHeight, 100); // Delay in ms
-});
-
 window.addEventListener('DOMContentLoaded', setSectionHeight); // Initial call
 
 // Function to check if the element is in the viewport
