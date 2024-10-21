@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 });
 // Animation HTML Insertion
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Animation script loaded');
+    console.log('Footer script loaded');
     
     function loadExternalHTML() {
         fetch('animation.html')

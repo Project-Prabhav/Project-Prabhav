@@ -517,42 +517,6 @@ footer{
     body{
         width:100% !important;
     }
-    .founder{
-        margin:2vh auto -5.5vh auto;
-        font-size:7vw;
-        font-weight: 600;
-    }
-    .project{
-        text-align:center;
-        margin:2vh auto 0 auto;
-        font-size:8vw;
-        text-decoration:5px underline;
-        text-underline-offset:8px;
-        font-family:  "Merriweather", sans-serif;
-        font-weight: 600;
-        color: rgb(22, 31, 136);
-    }
-    .icons .new-worker {
-        width: 5vw;
-        margin: 2vh 0 1vh 6vw;
-    }
-    .nav-buttons {
-        width: fit-content;
-        margin: 34vh 2vw 0 50vw !important;
-    }
-    .nav-buttons button, .nav-buttons-1 button {
-        width: 7vw;
-        height: 5vh;
-        font-size: 5vw;
-        border-radius: 4vw;
-    }
-    .nav-buttons-1 {
-        width: fit-content;
-        margin: 34vh 2vw 0 30vw !important;
-    }
-    .department-3 .new-worker, .department-4 .new-worker {
-        margin-top:-1vh !important;
-    }
     .org-content {
         display:flex;
         flex-direction:column;
@@ -562,11 +526,7 @@ footer{
         height:7vh;
         margin-left:12vw;
     }
-    .dept-name h1{
-        font-size:5.5vw;
-        margin:1vh 0 0 4vw;
-    }
-    .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
+    .dept-name h1, .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
         font-size:6.5vw;
         margin:0.6vh 0 0 4vw;
     }
@@ -642,22 +602,6 @@ footer{
     }
     .text-box h1{
         font-size: 20vw;
-    }
-}
-@media (min-width:1000px) and (max-width:1199px) and (max-height:900px) {
-    .dept-name h1{
-        font-size:1.9vw !important;
-        margin:1.5vh 0 0 2vw !important;
-    }
-    .chart{
-        width:33vw;
-        height:55vh !important;
-    }
-}
-@media (min-width:1280px) and (max-width:1399px) {
-    .chart{
-        width:33vw;
-        height:55vh;
     }
 }
 @media (max-width:400px){
