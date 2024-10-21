@@ -17,6 +17,8 @@ function animateCounter(counter) {
     updateCounter();
 }
 
+let lastHeight = null;
+
 function setSectionHeight() {
     const section = document.getElementById('key-enablers-section');
 
@@ -31,14 +33,24 @@ function setSectionHeight() {
         console.log('Additional Height (5vh):', additionalHeight);
         console.log('New Height:', newHeight);
 
-        // Set the height using a dynamically created CSS rule
-        section.style.setProperty('height', `${newHeight}px`, 'important');
+        // Only set height if it's different from the last set height
+        if (lastHeight !== newHeight) {
+            section.style.setProperty('height', `${newHeight}px`, 'important');
+            lastHeight = newHeight; // Update last height
+        }
     } else {
         section.style.removeProperty('height'); // Reset height when outside the range
+        lastHeight = null; // Reset last height
     }
 }
 
-window.addEventListener('resize', setSectionHeight); // Adjust height on resize
+// Debounce the resize event to avoid too many calculations
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setSectionHeight, 100); // Delay in ms
+});
+
 window.addEventListener('DOMContentLoaded', setSectionHeight); // Initial call
 
 // Function to check if the element is in the viewport
