@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="base.css">
+    <title>Donate Now | Prabhaav</title>
+    <link rel="icon" type="image/x-icon" href="../Images/Butterfly-icon.png">
+    <script src="base.js"></script>
+</head>
+<body>
+    <div class="header">     
+        <nav>
+            <a href="./index.html"><img src="../Images/logo.jpeg" title="Project Prabhav" class="comp-logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li class="yel"><a href="index.html"  target="" >Home</a></li>
+                    <li class="yel"><a href="about.html"  target="">About Us</a></li>
+                    <li class="yel"><a href="Intervention.html" target="">Intervention</a></li>
+                    <li class="yel"><a href="Organisation.html"  target="">Organization</a></li>
+                    <li class="yel"><a href="get.html">Get Involved</a></li>
+                    <a href="Donate.html"><button class="hero-btn1">Donate</button></a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="hideMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h2>Be the Change:</h2>
+            <h1>Donate Today And Make A Difference</h1> 
+        </div>
+    </div>
+
+<div class="loading-overlay" id="loadingOverlay"></div>
+<div class="org-content">
+    <h1 class="support">Support Our Organization</h1>
+    <div class="payment-options">
+        <div class="payment-header">
+            <h2 class="choose">Choose a payment option:</h2>
+        </div>
+
+        <div class="payment-option" onclick="showPayment('upi')">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <h3>UPI / BHIM</h3>
+        </div>
+        <div class="payment-fields" id="upi-fields">
+            <form action="your_upi_endpoint" method="POST">
+                <h3>Select your UPI app</h3>
+                <button class="bhim-upi"><img src="../Images/BHIM.png" alt="BHIM"></button>
+                <button class="phone-pay"><img src="../Images/PhonePe.png" alt="PhonePe"></button>
+                <button class="paytm"><img src="../Images/Paytm.png" alt="Paytm"></button>
+                <button class="google-pay"><img src="../Images/GooglePay.png" alt="GooglePay"></button>
+                <button type="submit" class="submit">Proceed with Payment</button>
+            </form>
+        </div>
+
+        <div class="payment-option" onclick="showPayment('netbanking')">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <h3>Net Banking</h3>
+        </div>
+        <div class="payment-fields" id="netbanking-fields">
+            <form action="your_net_banking_endpoint" method="POST">
+                <h3>Select your Bank</h3>
+                <button type="button" class="sbi" onclick="selectBank('SBI')">
+                    <img src="../Images/SBI.png" alt="SBI">
+                </button>
+                <button type="button" class="kotak" onclick="selectBank('Kotak')">
+                    <img src="../Images/Kotak.png" alt="Kotak">
+                </button>
+                <button type="button" class="axis" onclick="selectBank('Axis')">
+                    <img src="../Images/Axis.png" alt="Axis">
+                </button>
+                <button type="button" class="hdfc" onclick="selectBank('HDFC')">
+                    <img src="../Images/HDFC.png" alt="HDFC">
+                </button>
+            
+                <button type="submit" class="submit">Proceed with Payment</button>
+            </form>
+        </div>
+
+        <div class="payment-option" onclick="showPayment('card')">
+            <div class="circle"><div class="circle-inner"></div></div>
+            <h3>Credit/Debit Card</h3>
+        </div>
+        <div class="payment-fields" id="card-fields">
+            <form action="your_card_endpoint" method="POST">
+                <div class="input">
+                    <h2>Card Number *</h2>
+                    <input type="text" maxlength="29" name="card_number" placeholder="Card Number" required oninput="formatCardNumber(this)">
+                </div>
+                <div class="input">
+                    <h2>Expiry Date *</h2>
+                    <input type="text" maxlength="7" pattern="\d{2}/\d{2}" name="expiry_date" placeholder="Expiry Date (MM/YY)" required oninput="formatExpiryDate(this)">
+                </div>
+                <div class="input">
+                    <h2>CVV *</h2>
+                    <input type="text" maxlength="3" pattern="\d{3}"  name="cvv" placeholder="CVV" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                </div>
+                <br>
+                <button type="submit" class="submit">Proceed with Payment</button>
+            </form>
+        </div>
+        <h3 class="troubles">Having Troubles? <a href="mailto:office.projectprabhav@gmail.com">Contact Us</a></h3>
+    </div>
+</div>
+<footer id="footer"></footer>
+<button id="back-to-top"><img src="../Images/up.png" alt="up"></button>
+<div id="mob-menu"></div>  
+
+</body>
+</html>

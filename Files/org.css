@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+    background-color: white;
+    font-family: 'DM Sans', sans-serif;
+    justify-content: space-around;
+}
+.text-box h1{
+    font-size: 15vw !important;
+    text-align: center;
+}
+.web-2{
+    margin:5vh auto 7vh auto;
+}
+/* More People Department */
+
+.inner-data-3, .inner-data-2, .inner-data, .inner-data-4 {
+    display: none;
+}
+
+.inner-data-3.active, .inner-data-2.active, .inner-data.active, .inner-data-4.active{
+    display: block;
+}
+.icons img{
+    display: none;
+}
+
+.icons img:nth-child(-n+3) {
+    display: block;
+}
+.icons .new-worker {
+    display: none;
+    width:2.2vw;
+    height:8vh;
+    margin-top:0;
+    margin-left:2vw;
+}
+.nav-buttons{
+    position:absolute;
+    width:6vw;
+    margin:34vh 2vw 0 18vw !important;
+}
+#prevBtn, #nextBtn {
+    border:none;
+    width:2.3vw;
+    height:5vh;
+    font-size:2vw;
+    border-radius:2vw;
+}
+#prevBtn:hover, #nextBtn:hover{
+    background-color:white;
+}
+/* Done*/
+.comp-logo{
+    margin-top:-2vh !important;
+    margin-left:-0.5vw !important;
+}
+/* Loading Animation */
+.org-content.hidden {
+    display: none;
+}
+/* Main Content */
+.department-1, .department-2, .department-3, .department-4, .dept-col, .dept-col-2{
+    display:flex;
+    flex-direction: column;
+    min-height:fit-content;
+}
+.org-content {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+}
+.dept-name, .dept-2-name, .dept-3-name, .dept-4-name{
+    background-color: #00acc1;
+    height:7vh;
+    width:26vw;
+}
+.dept-name{
+    background-color: rgb(1, 186, 232);
+}
+.dept-2-name{
+    background-color: rgb(120, 183, 25);
+}
+.dept-3-name{
+    background-color: rgb(1, 150, 150);
+}
+.dept-4-name{
+    background-color: purple;
+}
+.dept-col h1, .dept-col-2 h1{
+    padding:0;
+    margin: 0.5vh 0 0 3vw;
+    color:white;
+    font-weight:normal;
+    font-size:28px;
+    display:flex;
+    flex-direction: column;
+}
+.dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
+    width: 0;
+    height: 0;
+    border-top: 3.5vh solid transparent;
+    border-bottom: 3.5vh solid transparent;
+}
+.dept-name-tri{
+    border-left: 20px solid rgb(1, 186, 232);
+}
+.dept-name-tri-2{
+    border-right: 20px solid rgb(120, 183, 25);
+}
+.dept-name-tri-3{
+    border-left: 20px solid rgb(1, 150, 150);
+}
+.dept-name-tri-4{
+    border-right: 20px solid purple;
+}
+.dept-1, .dept-1-inner, .dept-2, .dept-2-inner, .dept-3, .dept-3-inner, .dept-4, .dept-4-inner{
+    display:inline-flex;
+}
+.dept-1-inner{
+    margin-top:0;
+}
+.inner-tri{
+    border-top: 3vh solid rgb(0, 147, 184);
+    border-left: 1.5vw solid transparent;
+}
+.inner-tri-2{
+    border-top: 3vh solid rgb(102, 155, 21);
+    border-right: 1.5vw solid transparent !important;
+}
+.inner-tri-3{
+    border-top: 3vh solid rgb(1, 128, 128);
+    border-left: 1.5vw solid transparent;
+}
+.inner-tri-4{
+    border-top: 3vh solid rgb(74, 0, 74);
+    border-right: 1.5vw solid transparent !important;
+}
+.dept-details, .dept-2-details, .dept-3-details, .dept-4-details{
+    width:24vw !important;
+    height:fit-content;
+    background-color:rgb(226, 225, 225);
+    display:inline-flex;
+}
+.dept-details img, .dept-details-2{
+    width:3vw;
+    height:7vh;
+    margin-left:2vw;
+    margin-top:2vh;
+}
+.dept-2-details, .dept-4-details{
+    margin-left:26px;
+}
+.dept-data, .dept-data-2{
+    display:flex;
+    flex-direction:column;
+}
+.dept-data-2{
+    margin-left: 7vw;
+}
+.department-1, .department-2, .department-3, .department-4{
+    margin-left:2.8vw;
+    margin-top:10vh;
+}
+.inner-data, .inner-data-3{
+    margin-top:-2vh;
+}
+.inner-data-2, .inner-data-4{
+    margin-right: 2vw;
+    margin-top:-2vh;
+}
+.dept-col .level-desc, .dept-col-2 .level-desc{
+    margin-top:-3vh;
+    font-size:2.1vh;
+}
+.dept-col{
+    margin-left:-1vw;
+}
+.department-1 .level-header{
+    font-size:3vh;
+    color:rgb(54, 97, 143);
+} 
+.department-2 .level-header{
+    font-size:3vh;
+    color:rgb(120, 183, 25);
+}
+.department-3 .level-header{
+    font-size:3vh;
+    color:rgb(1, 150, 150);
+} 
+.department-4 .level-header{
+    font-size:3vh;
+    color:purple;
+}
+.chart{
+    height: 60vh;
+    margin: 20vh 1vw 0 4vw;
+}
+.icons, .icons-2{
+    display:flex;
+    flex-direction: column;
+    width:6vw;
+}
+.dept-col-2 .icons, .department-3 .icons{
+    margin-top:2vh;
+}
+.icons .office{
+    margin-left:1.5vw;
+    width:3vw;
+    height:6vh;
+}
+.icons .worker{
+    width:2vw;
+    height:7vh;
+    margin-top:5vh;
+    margin-left:2vw;
+}
+.icons .heading-3{
+    width:4vw;
+    margin-top:5.2vh;
+    margin-left:1vw;
+}
+.department-1 .worker{
+    width:2.5vw;
+    height:7vh;
+    margin-top:4.5vh;
+    margin-left:1.7vw;
+}
+.department-3 .office{
+    margin:0 0 0 1.5vw;
+    width:3.2vw;
+    height:6.2vh;
+}
+.icons-2 .worker{
+    width:2vw;
+    height:7vh;
+    margin-top:5vh;
+    margin-left:2vw;
+}
+.icons-2 .heading-3{
+    width:4vw;
+    margin-top:5.2vh;
+    margin-left:1vw;
+}
+.department-1, .department-2, .department-3, .department-4 {
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+.department-1:hover, .department-2:hover, .department-3:hover, .department-4:hover {
+    transform: scale(1.05);
+}
+.cursor-image {
+    position: absolute;
+    width: 120px;
+    height: 100px;
+    pointer-events:visiblePainted;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+footer{
+    width:98.7vw !important;
+    margin:10vh 0 -6px -8px !important;
+}
+.prabhav-social-media{
+    margin:5px 20px !important;        
+}
+.down-p{
+    margin-top:-10px !important;
+}
+.middle a, .about-us p{
+    margin:0 !important;
+}
+.footer-mid-spacing{
+    margin-top:-5px !important;
+}
+@media (max-width: 749px) and (min-width: 320px) {
+    body{
+        width:100vw;
+        height:100vh;
+    }
+    .org-content{
+        display:flex;
+        flex-direction: column !important;
+    }
+    .dept-name, .dept-3-name, .dept-2-name, .dept-4-name{
+        width:92vw;
+        height:6vh;
+    }
+    h1{
+        font-size:8vw !important;
+        justify-content:center;
+        margin:0.7vh 0 1vh 4vw !important;
+    }
+    .dept-details, .dept-2-details, .dept-3-details, .dept-4-details{
+        width:85.5vw !important;
+        height:32vh !important;
+        display:none;
+    }
+    .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
+        border-top: 3vh solid transparent;
+        border-bottom: 3vh solid transparent;    
+    }
+    .dept-name-tri{
+        border-left: 30px solid rgb(1, 186, 232);
+    }
+    .dept-name-tri-2{
+        border-left: 30px solid rgb(120, 183, 25);
+        border-right:0;
+    }
+    .dept-name-tri-3{
+        border-left: 30px solid rgb(1, 150, 150);
+    }
+    .dept-name-tri-4{
+        border-left: 30px solid purple;
+        border-right:0;
+    }
+    .inner-tri{
+        border-top: 2vh solid rgb(0, 147, 184);
+        border-left: 4vw solid transparent;
+    }
+    .inner-tri-2{
+        border-top: 2vh solid rgb(102, 155, 21);
+        border-left: 4vw solid transparent !important;
+        border-right:0 !important;
+    }
+    .inner-tri-3{
+        border-top-width: 2vh;
+        border-left-width:4vw;
+    }
+    .inner-tri-4{
+        border-top: 2vh solid rgb(74, 0, 74);
+        border-left: 4vw solid transparent !important;
+        border-right:0 !important;
+    }
+    .department-1:hover, .department-2:hover, .department-3:hover, .department-4:hover {
+        transform: none;
+    }
+    .department-1:hover .dept-details, .department-2:hover .dept-2-details, .department-3:hover .dept-3-details, .department-4:hover .dept-4-details {
+        display:flex;
+    }
+    .dept-2-details, .dept-4-details{
+        margin-left:0;
+    }
+    .department-3 .office, .department-4 .office{
+        margin-top:0 !important;
+    }
+    .level-header{
+        font-size:25px !important;
+    }
+    .level-desc{
+        font-size: 20px !important;
+    }
+    .dept-data{
+        margin-left:15vw;
+    }
+    .icons .office{
+        width:11vw;
+        height:5.5vh;
+        margin: 2vh 0 0 4vw;
+    }
+    .icons .worker{
+        width:8vw;
+        height:5.5vh;
+        margin-left:5.5vw !important;
+    }
+    .icons .heading-3{
+        width:15vw;
+        height:5.5vh;
+    }
+    .icons .worker, .icons .heading-3{
+        margin: 5vh 0 0 2vw;
+    }
+    .chart{
+        width:90vw;
+        height:42vh;
+        position:relative;
+        margin:12vh auto 2vh auto;
+    }
+    .comp-logo{
+        margin:3vh 0 2vh 0 !important;
+        height:8vh !important;
+        width:45vw !important;
+    }
+    .text-box{
+        margin-top:5vh;
+    }
+    @media (min-width:380px){
+        .text-box h1{
+          font-size:14vw !important;
+          margin-top:3vh !important;
+        }
+    }
+    @media (max-width:380px){
+        .text-box h1{
+          font-size:15vw !important;
+          margin-top:4vh !important;
+        }
+    }
+    .header{
+        margin-top:-2vh !important;
+        width:100vw !important;
+        height:30vh;
+    }
+    .header ul {
+        display: none; 
+    }
+}
+@media (min-width: 750px) and (max-width: 1050px)  and (min-height:1000px) {
+    body{
+        width:100% !important;
+    }
+    .org-content {
+        display:flex;
+        flex-direction:column;
+    }
+    .dept-name, .dept-3-name, .dept-2-name, .dept-4-name{
+        width:70vw;
+        height:7vh;
+        margin-left:12vw;
+    }
+    .dept-name h1, .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
+        font-size:6.5vw;
+        margin:0.6vh 0 0 4vw;
+    }
+    .dept-1-inner, .dept-2-inner, .dept-3-inner, .dept-4-inner{
+        margin:0 0 0 12vw !important;
+    }
+    .dept-details, .dept-3-details, .dept-2-details, .dept-4-details{
+        width:66vw !important;
+        margin-left:0;
+    }
+    .chart{
+        width:70vw;
+        height:auto;
+        margin:10vh auto 0 auto;
+    }
+    .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
+        width: 0;
+        height: 0;
+        border-top: 3.5vh solid transparent;
+        border-bottom: 3.5vh solid transparent;
+    }
+    .dept-name-tri{
+        border-left: 30px solid rgb(1, 186, 232);
+    }
+    .dept-name-tri-2{
+        border-left: 30px solid rgb(120, 183, 25);
+        border-right:0;
+    }
+    .dept-name-tri-3{
+        border-left: 30px solid rgb(1, 150, 150);
+    }
+    .dept-name-tri-4{
+        border-left: 30px solid purple;
+        border-right:0;
+    }
+    .inner-tri, .inner-tri-3, .inner-tri-2{
+        border-left: 3vw solid transparent !important;
+    }
+    .inner-tri-2{
+        border-top: 3vh solid rgb(102, 155, 21);
+        border-right:0 !important;
+    }
+    .inner-tri-4{
+        border-top: 3vh solid rgb(74, 0, 74);
+        border-left: 3vw solid transparent !important;
+        border-right:0 !important;
+    }
+    .department-3 .office, .department-4 .office{
+        margin-top:0 !important;
+    }
+    .icons .office{
+        width:9vw;
+        margin:2vh 0 0 4vw;
+    }
+    .icons .worker{
+        width:5vw;
+        margin-left:6vw;
+    }
+    .icons .heading-3{
+        width:12vw;
+        margin-left:2.5vw;
+    }
+    .dept-data{
+        margin-left:14vw;
+    }
+    .comp-logo{
+        margin:3vh 0 2vh 0 !important;
+        height:10vh !important;
+        width:45vw !important;
+    }
+   .header ul {
+        display: none; 
+    }
+    .text-box h1{
+        font-size: 20vw;
+    }
+}
+@media (max-width:400px){
+    .level-header{
+        font-size:3vh !important;
+    }
+    .level-desc{
+        font-size: 2.2vh !important;
+    }
+    .dept-details, .dept-3-details, .dept-2-details, .dept-4-details{
+        height:35vh !important;
+    }
+    .icons .worker{
+        margin-top:7vh !important;
+    }
+    .icons .heading-3{
+        margin-top:6vh !important;
+    }
+    .dept-name, .dept-3-name, .dept-2-name, .dept-4-name{
+        width:92vw;
+        height:7vh;
+    }
+    .dept-name-tri, .dept-name-tri-2, .dept-name-tri-3, .dept-name-tri-4{
+        border-top: 3.5vh solid transparent;
+        border-bottom: 3.5vh solid transparent;    
+    }
+    .chart{
+        width:80vw;
+        height:45vh;
+    }
+    @media (max-width:359px){
+        .chart{
+            width:90vw;
+            height:35vh;
+        }
+        h1{
+            font-size:9vw !important;
+            margin-top:1.2vh !important;
+        }
+    }
+    @media (min-width:360px){
+        h1{
+            font-size:8.5vw !important;
+            margin-top:0.7vh !important;
+        }
+        .chart{
+            width:80vw;
+            height:45vh;
+        }
+    }
+    @media (min-width:385px){
+        .chart{
+            width:85vw;
+            height:40vh;
+        }
+    }
+}

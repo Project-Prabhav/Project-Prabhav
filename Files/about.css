@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    margin: 0px;
+}
+body{
+    background-color:rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width:100vw !important;
+    overflow-x:hidden;
+}
+.text-box h1{
+    font-size: 15vw !important;
+    font-family: "Bebas Neue", sans-serif !important;
+    text-align: center !important;
+}
+footer{
+    margin-top:0 !important;
+    width:100.66% !important;
+}
+.lol, .lol-2{
+    margin-top: 0;
+    font-size: 6em;
+    font-family:  "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: rgb(22, 31, 136);
+    text-align:center;
+}
+.lol-2{
+    font-size: 4.5em;
+    text-decoration: underline;
+}
+.rol{
+    font-size: 4.5em;
+    font-family:  "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: rgb(22, 31, 136);
+    text-align: center;
+    margin-top: -10vh;
+}
+.roll, .roll-2{
+    font-size: 4em;
+    font-family:  "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: rgb(22, 31, 136);
+    text-align: center;
+    margin-top: -1%;
+}
+.roll-2{
+    margin-top:-12vh;
+}
+.ss, .ss-inner{
+    margin-left: 35vw;
+    margin-right: 7%;
+    font-size:2.2vw;    
+    font-family:'Times New Roman', Times, serif;
+}
+.ss-inner{
+    margin-left: 0 !important;
+}
+.ps, .ps-inner{
+    margin:1vh 40% 0 7%;
+    font-size:2.2vw;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: -2%;
+}
+.ps-inner{
+    margin-top:0 !important;
+    margin-left:0;
+}
+.wol{
+    width: 25vw;
+    height:20vh;
+    margin-top: 5vh;
+    margin-left: 5%;
+    float: left;
+}
+.new{
+    width: 20vw;
+    height:35vh;
+    margin:-3vh 12% 0 0;
+    float: right;
+}
+.new1{
+    width: 20vw; 
+    height:35vh;
+    margin:2vh 12% 2% 0;
+    float: right;
+}
+.ss, .ss-inner, .ps, .ps-inner{
+    font-size:2.3vw !important;
+}
+@media (max-width: 749px) and (min-width: 320px) {
+    .comp-logo{
+        margin:3vh 0 2vh 0 !important;
+        height:8vh !important;
+        width:45vw !important;
+    }
+    .text-box{
+        margin-top:5vh;
+    }
+    .text-box h1{
+        font-size:13vw !important;
+        margin-top:3vh !important;
+    }
+    .header{
+        margin-top:-2vh !important;
+        width:100vw !important;
+        height:30vh;
+    }
+    .header ul {
+        display: none; 
+    }
+    .menu-icon div{
+        display:block !important;
+    }
+    .lol, .lol-2{
+        margin-top: 5%;
+        font-size: 4em;
+    }
+    .lol-2{
+        text-decoration: underline;
+        margin-bottom:2vh;
+    }
+    @media (max-width:380px){
+        .rol, .lol-2{
+            font-size: 3em;
+        }
+        .roll, .roll-2{
+            font-size: 2.5em;
+            margin-top: -2vh !important;
+        }
+        .roll-2{
+            margin-top:-17vh !important;
+        }
+        @media (max-width:349px){
+            .new1{
+                margin-top:4vh !important;
+            }
+        }
+        @media (min-width:349px){
+            .new1{
+                height:25vh !important;
+                margin-top:5vh !important;
+            }
+            .new{
+                height:25vh !important;
+            }
+        }
+    }
+    @media (min-width:381px){
+        .rol, .lol-2{
+            font-size: 3.5em;
+        }
+        .roll, .roll-2{
+            font-size: 3em !important;
+            margin-top: -2% !important;
+        }
+        .roll-2{
+            margin-top:-12vh !important;
+        }
+    }
+    .rol{
+        margin-top: -10vh;
+    }
+    
+    .ss{
+        font-size:5.5vw !important;
+        margin-left: 45vw;
+    }
+    .ss-inner{
+        margin-left: -40vw !important;
+        font-size:5.5vw !important;
+        display: block;
+    }
+    .ps, .ps-inner{
+        font-size:5.5vw !important;
+        margin-right:50vw !important;
+    }
+    .ps-inner{
+        width:90vw;
+        margin-top:0.2vh;
+        display:block;
+    }
+    .wol{
+        width:40vw;
+        height:10vh;
+        margin:2vh 4vw 0 5vw;
+    }
+    .new{
+        width:45vw;
+        height:20vh;
+        margin:-1vh 4vw 0 0;
+    }
+    .new1{
+        width:45vw;
+        height:20vh;
+        margin:6vh 4vw 0 0;
+    }
+}
+@media (min-width: 750px) and (max-width: 1050px)  and (min-height:1000px) {
+    .comp-logo{
+        margin:3vh 0 2vh 0 !important;
+        height:10vh !important;
+        width:45vw !important;
+    }
+   .header ul {
+        display: none; 
+    }
+    .text-box h1{
+        font-size: 20vw !important;
+    }
+    .wol{
+        width:35vw;
+        height:10vh;
+        margin:4vh 4vw 0 5vw;
+    }
+    .new{
+        width:40vw;
+        height:20vh;
+        margin:-1vh 4vw 0 0;
+    }
+    .new1{
+        width:40vw;
+        height:20vh;
+        margin:2vh 4vw 2vh 0;
+    }
+    .rol{
+        margin-top:-7vh !important;
+    }
+    .roll-2{
+        margin: -8vh 0 0 0 !important;
+        text-align: center;
+    }
+    .ss, .ss-inner{
+        font-size:2.9vw !important;
+        margin-left: 45vw;
+        line-height:2.5vh;
+    }
+    .ss-inner{
+        margin-left: 0 !important;
+    }
+    .ps, .ps-inner{
+        font-size:2.9vw !important;
+        margin:-1vh 47vw 0 5vw !important;
+        line-height:2.5vh;
+    }
+    .ps-inner{
+        width:90vw;
+        margin-top:1vh;
+        margin-left:0 !important;
+    }
+    @media (max-width: 860px) and (min-width:840px) {
+        .roll-2{
+            margin-top:-5vh !important;
+        }
+    }
+    @media (min-width: 1020px){
+        .lol-2{
+            margin-top:2vh !important;
+        }
+        .rol {
+            margin-top:-5vh !important;
+        }
+        .roll{
+            margin-top:0;
+        }
+        .roll-2{
+            margin: -5vh 0 0 0 !important;
+            text-align: center;
+        }
+        .ss, .ss-inner{
+            margin:2vh 5vw 0 45vw !important;
+            font-size:2.9vw !important;
+        }
+        .ss-inner{
+            margin-left:0 !important;
+        }
+        .ps-inner{
+            font-size:2.9vw !important;
+            margin-left:0 !important;
+        }
+        .ps{
+            font-size:2.9vw !important;
+            margin:0 47vw 0 5vw !important;
+        }
+    }
+}
+@media (min-width:1000px) and (max-width:1199px) and (max-height:780px) {
+    .ss, .ss-inner{
+        font-size:2.9vw !important;
+        margin:0 5vw 0 40vw !important;
+    }
+    .ps, .ps-inner{
+        font-size:2.9vw !important;
+        margin:0 45vw 0 7vw !important;
+    }
+    .ss-inner, .ps-inner{
+        margin-left:0vw !important;
+    }
+    .wol{
+        width:30vw !important;
+    }
+    .new{
+        width:30vw !important;
+        height:40vh;
+        margin:2vh 7vw 0 0 !important;
+    }
+    .new1{
+        width:30vw !important;
+        height:40vh;
+        margin:8vh 8vw 5vh 0 !important;
+    }
+}
+@media (min-width:1400px){
+    .roll-2{
+        margin-top:-5vh !important;
+    }
+    .ps{
+        margin:-2vh 35vw 0 8vw;
+    }
+    .new, .new1{
+        margin-right:8vw;
+    }
+
+}
+@media (min-width:1280px) and (max-width:1399px) {
+    .new, .new1{
+        height:28vh;
+    }
+    .wol{
+        margin-top:2vh;
+    }
+    .ps{
+        margin-left:10vw;
+    }
+}
