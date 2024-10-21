@@ -23,8 +23,7 @@ function setSectionHeight() {
     // Check if the viewport width is within the specified range
     if (window.innerWidth >= 320 && window.innerWidth <= 749) {
         const contentHeight = section.scrollHeight; // Get the height of the content
-        const additionalHeight = window.innerHeight * 0.05; // Calculate 5vh
-        const newHeight = contentHeight + additionalHeight; // Calculate total height
+        const newHeight = contentHeight; // Calculate total height
 
         // Log for debugging
         console.log('Content Height:', contentHeight);
