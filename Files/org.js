@@ -133,15 +133,6 @@ function repositionTriangles() {
 
 window.addEventListener('resize', repositionTriangles);
 window.addEventListener('load', repositionTriangles);
-window.addEventListener('resize', () => {
-    let windowHeight = window.innerHeight;
-    let windowWidth = window.innerWidth;
-
-    const excludedInterval = (windowWidth >= 1020 && windowWidth <= 1100) && (windowHeight >= 600 && windowHeight <= 720);
-
-    console.log("Window height:", windowHeight, "Window width:", windowWidth);
-    console.log("Inside exclusion interval:", excludedInterval);
-});
 
 // Department Height In Mobiles
 function adjustDeptHeights() {
@@ -165,12 +156,8 @@ function adjustDeptHeights() {
         multiplier = 0.048;
     }
 
-    console.log(`Current screen width: ${window.innerWidth}px`);
-    console.log(`Multiplier used: ${multiplier}`);
-
     // Apply the height adjustment based on the determined multiplier
     if (window.matchMedia('(max-width: 400px)').matches) {
-        console.log('Applying height adjustments for screen width <= 400px');
         deptClasses.forEach(selector => {
             const elements = document.querySelectorAll(selector);
             elements.forEach(element => {
@@ -178,16 +165,13 @@ function adjustDeptHeights() {
                 const contentHeight = element.scrollHeight;
                 const newHeight = `${contentHeight + (multiplier * window.innerHeight)}vh`;
                 element.style.setProperty('height', newHeight, 'important'); // Set height with !important
-                console.log(`Set height for ${selector} to ${newHeight}`);
             });
         });
     } else {
-        console.log('Resetting heights for screen width > 400px');
         deptClasses.forEach(selector => {
             const elements = document.querySelectorAll(selector);
             elements.forEach(element => {
                 element.style.setProperty('height', '', 'important'); // Reset height to auto with !important
-                console.log(`Reset height for ${selector} to auto`);
             });
         });
     }
