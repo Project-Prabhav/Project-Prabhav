@@ -198,10 +198,10 @@ body {
 @media (min-width:320px) and (max-width:749px) {
     @media (min-width:400px) {
         .text-box h2{
-            font-size:7vw !important;
+            font-size:8vw !important;
         }
         .text-box h1{
-            font-size:7.5vw !important;
+            font-size:7.8vw !important;
         }
     }
     .support{
@@ -241,11 +241,11 @@ body {
     }
     #upi-fields button img {
         width:36vw !important;
-        margin:0.5vh 2vw 2vh -1vw !important;
+        margin:0.2vh 2vw 2vh -1vw !important;
     }
     #upi-fields .phone-pay img{
         width:44vw !important;
-        margin:-1.25vh 2vw 0 -5.5vw !important;
+        margin:-1.5vh 2vw 0 -5.5vw !important;
     }
     #upi-fields .paytm img{
         width:62vw !important;
@@ -253,7 +253,7 @@ body {
     }
     #upi-fields .google-pay img{
         width:42vw !important;
-        margin:0vh 2vw 0 -4vw !important;
+        margin:-0.2vh 2vw 0 -4vw !important;
     }
     #upi-fields .submit, #netbanking-fields .submit, #card-fields .submit {
         height:5vh;
