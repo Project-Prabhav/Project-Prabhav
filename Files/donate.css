@@ -195,6 +195,9 @@ body {
     text-align:center;
     margin-top:4vh;
 }
+#upiErrorMessage, #errorMessage, #cardErrorMessage{
+    color: red;
+}
 @media (min-width:320px) and (max-width:749px) {
     @media (min-width:400px) {
         .text-box h2{
