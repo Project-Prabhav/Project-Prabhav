@@ -195,3 +195,14 @@ body {
     text-align:center;
     margin-top:4vh;
 }
+@media (min-width:320px) and (max-width:749px) {
+    .payment-options{
+        width:75vw;
+        border-radius:4vw;
+        margin:5vh auto;
+    }
+    .payment-header{
+        width:85vw;
+        margin: -4vh -2vw 0 -2vw;
+    }
+}
