@@ -4,12 +4,16 @@
 *{
   margin: 0px;
 }
+html,body{
+  width:100%;
+  min-height:fit-content;
+  overflow-x:clip;
+}
 body{
   background-color:rgb(255, 255, 255);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x:hidden !important;
 }
 .header{
   height: 100vh;
@@ -365,7 +369,7 @@ nav .fa{
   line-height: 1.6;
 }
 footer{
-  width:98.4vw !important;
+  width:100vw !important;
   margin-top:0;
   overflow:hidden;
 }
@@ -550,7 +554,7 @@ footer{
   }
   footer{
     height:104vh;
-    width:99.4vw !important;
+    width:100vw !important;
   }
   @media (min-width:380px){
     .header{
@@ -629,17 +633,17 @@ footer{
     margin-left:45vw;
   }
   .roll{
-    height:22vh;
+    height:22vh !important;
     width:35vw;
     margin-top:5vh;
   }
   .rill{
-    height:22vh;
+    height:22vh !important;
     width:45vw;
     margin-right:3vw;
   }
   .rooll{
-    height:20vh;
+    height:20vh !important;
     width:35vw;
   }
   .ps, .ps-inner, .ps-inner-2{
@@ -677,7 +681,7 @@ footer{
   @media (min-width:400px){
     #key-enablers-section{
       height:140vh !important;
-      width:99.4vw !important;
+      width:100vw !important;
     }
   }
   .enabler-card{
@@ -870,7 +874,7 @@ footer{
 }
 @media (min-width:1280px) and (max-width:1399px) {
   footer{
-    width:99.4vw !important;
+    width:100vw !important;
   }
   #back-to-top{
     width:4.2vw !important;
