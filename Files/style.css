@@ -370,6 +370,7 @@ nav .fa{
 }
 footer{
   width:100vw !important;
+  margin-top:0;
   overflow:hidden;
 }
 #back-to-top {
@@ -548,13 +549,12 @@ footer{
   }
 }
 @media (min-width: 320px) and (max-width: 749px) {
-  .footer{
+  footer, .footer{
     margin-top:0;
   }
   footer{
     height:104vh;
     width:100vw !important;
-    margin-top:10vh !important;
   }
   @media (min-width:380px){
     .header{
@@ -682,6 +682,9 @@ footer{
     #key-enablers-section{
       height:140vh !important;
       width:100vw !important;
+    }
+    #key-enablers-section .enabler-cards:last-child{
+      margin-bottom:5vh !important;
     }
   }
   .enabler-card{
