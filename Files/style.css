@@ -682,6 +682,7 @@ footer{
     #key-enablers-section{
       height:140vh !important;
       width:100vw !important;
+      padding-bottom: 10vh !important;
     }
   }
   .enabler-card{

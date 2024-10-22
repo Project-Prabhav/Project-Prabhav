@@ -93,13 +93,17 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(document.body, { childList: true, subtree: true });
 });
 // Function for mobile menu
-function toggleMenuMob(event) {
-    var menu = document.getElementById("menu");
-    var icon = document.querySelector(".menu-icon");
-    var overlay = document.getElementById("overlay");
-    var body = document.body;
+// Track if the menu is open
+let isMenuOpen = false;
 
-    if (menu.style.display === "block") {
+function toggleMenuMob(event) {
+    const menu = document.getElementById("menu");
+    const icon = document.querySelector(".menu-icon");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+
+    if (isMenuOpen) {
+        // Close the menu
         menu.style.display = "none";
         icon.classList.remove("active");
         overlay.style.display = "none";
@@ -109,7 +113,9 @@ function toggleMenuMob(event) {
         window.scrollTo(0, parseInt(body.dataset.scrollY || '0'));
         body.style.position = "";
         body.style.top = "";
+        isMenuOpen = false;
     } else {
+        // Open the menu
         menu.style.display = "block";
         icon.classList.add("active");
         overlay.style.display = "block";
@@ -119,26 +125,30 @@ function toggleMenuMob(event) {
         body.style.position = "fixed";
         body.style.top = `-${body.dataset.scrollY}px`;
         body.classList.add("no-scroll");
+        isMenuOpen = true;
     }
     event.stopPropagation();
 }
 
 document.addEventListener("click", function(event) {
-    var menu = document.getElementById("menu");
-    var icon = document.getElementById("menuIcon");
+    const menu = document.getElementById("menu");
+    const icon = document.getElementById("menuIcon");
 
-    if (!menu.contains(event.target) && event.target !== icon) {
+    // Close menu only if it's open and the click was outside the menu and icon
+    if (isMenuOpen && !menu.contains(event.target) && event.target !== icon) {
         menu.style.display = "none";
         icon.classList.remove("active");
         document.getElementById("overlay").style.display = "none";
         document.body.classList.remove("no-scroll");
 
-        // Restore scroll when menu closes
+        // Restore scroll position only when closing the menu
         window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0'));
         document.body.style.position = "";
         document.body.style.top = "";
+        isMenuOpen = false;
     }
 });
+
 
 // Impact Section Height Adjustments (Media Width 1000-1399px)
 function adjustSectHeight() {
@@ -173,10 +183,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 
-        BackToTop.addEventListener("click", function() {
+        BackToTop.addEventListener("click", function(event) {
+            event.stopPropagation(); // Prevent event bubbling
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        });
+        });        
     } else {
         console.error("Element with ID 'back-to-top' not found.");
     }
