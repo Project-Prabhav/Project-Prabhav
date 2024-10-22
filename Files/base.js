@@ -93,17 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(document.body, { childList: true, subtree: true });
 });
 // Function for mobile menu
-// Track if the menu is open
-let isMenuOpen = false;
-
 function toggleMenuMob(event) {
-    const menu = document.getElementById("menu");
-    const icon = document.querySelector(".menu-icon");
-    const overlay = document.getElementById("overlay");
-    const body = document.body;
+    var menu = document.getElementById("menu");
+    var icon = document.querySelector(".menu-icon");
+    var overlay = document.getElementById("overlay");
+    var body = document.body;
 
-    if (isMenuOpen) {
-        // Close the menu
+    if (menu.style.display === "block") {
         menu.style.display = "none";
         icon.classList.remove("active");
         overlay.style.display = "none";
@@ -113,9 +109,7 @@ function toggleMenuMob(event) {
         window.scrollTo(0, parseInt(body.dataset.scrollY || '0'));
         body.style.position = "";
         body.style.top = "";
-        isMenuOpen = false;
     } else {
-        // Open the menu
         menu.style.display = "block";
         icon.classList.add("active");
         overlay.style.display = "block";
@@ -125,27 +119,31 @@ function toggleMenuMob(event) {
         body.style.position = "fixed";
         body.style.top = `-${body.dataset.scrollY}px`;
         body.classList.add("no-scroll");
-        isMenuOpen = true;
     }
     event.stopPropagation();
 }
 
 document.addEventListener("click", function(event) {
-    const menu = document.getElementById("menu");
-    const icon = document.getElementById("menuIcon");
+    var menu = document.getElementById("menu");
+    var icon = document.getElementById("menuIcon");
+    var backToTop = document.getElementById("back-to-top");
 
-    // Close menu only if it's open and the click was outside the menu and icon
-    if (isMenuOpen && !menu.contains(event.target) && event.target !== icon) {
+    // Only close menu if click is outside both menu, icon, and not on BackToTop button
+    if (
+        !menu.contains(event.target) &&
+        event.target !== icon &&
+        event.target !== backToTop &&
+        !backToTop.contains(event.target)
+    ) {
         menu.style.display = "none";
         icon.classList.remove("active");
         document.getElementById("overlay").style.display = "none";
         document.body.classList.remove("no-scroll");
 
-        // Restore scroll position only when closing the menu
+        // Restore scroll when menu closes
         window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0'));
         document.body.style.position = "";
         document.body.style.top = "";
-        isMenuOpen = false;
     }
 });
 
@@ -183,11 +181,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 
-        BackToTop.addEventListener("click", function(event) {
-            event.stopPropagation(); // Prevent event bubbling
+        BackToTop.addEventListener("click", function() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        });        
+        });
     } else {
         console.error("Element with ID 'back-to-top' not found.");
     }
