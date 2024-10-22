@@ -10,6 +10,8 @@
     <title>Donate Now | Prabhaav</title>
     <link rel="icon" type="image/x-icon" href="../Images/Butterfly-icon.png">
     <script src="base.js"></script>
+    <script src="donate.js"></script>
+
 </head>
 <body>
     <div class="header">     
@@ -47,13 +49,27 @@
             <h3>UPI / BHIM</h3>
         </div>
         <div class="payment-fields" id="upi-fields">
-            <form action="your_upi_endpoint" method="POST">
+            <form method="POST">
                 <h3>Select your UPI app</h3>
-                <button class="bhim-upi"><img src="../Images/BHIM.png" alt="BHIM"></button>
-                <button class="phone-pay"><img src="../Images/PhonePe.png" alt="PhonePe"></button>
-                <button class="paytm"><img src="../Images/Paytm.png" alt="Paytm"></button>
-                <button class="google-pay"><img src="../Images/GooglePay.png" alt="GooglePay"></button>
-                <button type="submit" class="submit">Proceed with Payment</button>
+                <button class="bhim-upi" onclick="selectUPI('BHIM')">
+                    <img src="../Images/BHIM.png" alt="BHIM">
+                </button>
+                <button class="phone-pay" onclick="selectUPI('PhonePe')">
+                    <img src="../Images/PhonePe.png" alt="PhonePe">
+                </button>
+                <button class="paytm" onclick="selectUPI('Paytm')">
+                    <img src="../Images/Paytm.png" alt="Paytm">
+                </button>
+                <button class="google-pay" onclick="selectUPI('GooglePay')">
+                    <img src="../Images/GooglePay.png" alt="GooglePay">
+                </button>
+                
+                <p id="upiMessage"></p>
+                <p id="upiErrorMessage"></p>
+                
+                <button type="submit" class="submit" onclick="showUPIErrorMessage(event)">
+                    Proceed with Payment
+                </button>
             </form>
         </div>
 
@@ -62,7 +78,7 @@
             <h3>Net Banking</h3>
         </div>
         <div class="payment-fields" id="netbanking-fields">
-            <form action="your_net_banking_endpoint" method="POST">
+            <form method="POST">
                 <h3>Select your Bank</h3>
                 <button type="button" class="sbi" onclick="selectBank('SBI')">
                     <img src="../Images/SBI.png" alt="SBI">
@@ -76,8 +92,12 @@
                 <button type="button" class="hdfc" onclick="selectBank('HDFC')">
                     <img src="../Images/HDFC.png" alt="HDFC">
                 </button>
-            
-                <button type="submit" class="submit">Proceed with Payment</button>
+
+                <!-- Empty <p> elements to hold messages -->
+                <p id="bankMessage"></p>
+                <p id="errorMessage"></p>
+                
+                <button type="submit" class="submit"  onclick="showErrorMessage(event)">Proceed with Payment</button>
             </form>
         </div>
 
@@ -86,21 +106,22 @@
             <h3>Credit/Debit Card</h3>
         </div>
         <div class="payment-fields" id="card-fields">
-            <form action="your_card_endpoint" method="POST">
+            <form method="POST">
                 <div class="input">
                     <h2>Card Number *</h2>
-                    <input type="text" maxlength="29" name="card_number" placeholder="Card Number" required oninput="formatCardNumber(this)">
+                    <input type="text" maxlength="29" name="card_number" placeholder="Card Number" required oninput="formatCardNumber(this)"  onfocus="hideErrorMessage()">
                 </div>
                 <div class="input">
                     <h2>Expiry Date *</h2>
-                    <input type="text" maxlength="7" pattern="\d{2}/\d{2}" name="expiry_date" placeholder="Expiry Date (MM/YY)" required oninput="formatExpiryDate(this)">
+                    <input type="text" maxlength="7" pattern="\d{2}/\d{2}" name="expiry_date" placeholder="Expiry Date (MM/YY)" required oninput="formatExpiryDate(this)"  onfocus="hideErrorMessage()">
                 </div>
                 <div class="input">
                     <h2>CVV *</h2>
-                    <input type="text" maxlength="3" pattern="\d{3}"  name="cvv" placeholder="CVV" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    <input type="text" maxlength="3" pattern="\d{3}"  name="cvv" placeholder="CVV" required oninput="this.value = this.value.replace(/[^0-9]/g, '')"  onfocus="hideErrorMessage()">
                 </div>
                 <br>
-                <button type="submit" class="submit">Proceed with Payment</button>
+                <p id="cardErrorMessage"></p>
+                <button type="submit" class="submit" onclick="showCardErrorMessage(event)">Proceed with Payment</button>
             </form>
         </div>
         <h3 class="troubles">Having Troubles? <a href="mailto:office.projectprabhav@gmail.com">Contact Us</a></h3>

@@ -195,14 +195,111 @@ body {
     text-align:center;
     margin-top:4vh;
 }
+#upiErrorMessage, #errorMessage, #cardErrorMessage{
+    color: red;
+}
 @media (min-width:320px) and (max-width:749px) {
+    @media (min-width:400px) {
+        .text-box h2{
+            font-size:8vw !important;
+        }
+        .text-box h1{
+            font-size:7.8vw !important;
+        }
+    }
+    .support{
+        font-size:7vw;
+        text-decoration: 2px underline;
+        text-underline-offset: 4px;
+        margin:2vh auto 0 auto;
+    }
     .payment-options{
-        width:75vw;
+        width:80vw;
         border-radius:4vw;
-        margin:5vh auto;
+        margin:5vh auto 5vh auto;
     }
     .payment-header{
-        width:85vw;
-        margin: -4vh -2vw 0 -2vw;
+        width:90vw;
+        margin: -4vh -2vw 0 -5vw;
+    }
+    .payment-header .choose{
+        font-size:6.5vw;
+        margin:4vh 3vw;
+    }
+    .payment-option{
+        font-size:5.5vw;
+    }
+    .circle-inner{
+        width:3.5vw;
+        height:1.6vh;
+        top:-4.65vh !important;
+        margin-left:-0.08px;
+    }
+    .payment-fields button{
+        height:10vh;
+        width:37vw;
+    }
+    .payment-fields h3{
+        font-size:5vw;
+    }
+    #upi-fields button img {
+        width:36vw !important;
+        margin:0.2vh 2vw 2vh -1vw !important;
+    }
+    #upi-fields .phone-pay img{
+        width:44vw !important;
+        margin:-1.5vh 2vw 0 -5.5vw !important;
+    }
+    #upi-fields .paytm img{
+        width:62vw !important;
+        margin:-4.5vh -14vw !important;
+    }
+    #upi-fields .google-pay img{
+        width:42vw !important;
+        margin:-0.2vh 2vw 0 -4vw !important;
+    }
+    #upi-fields .submit, #netbanking-fields .submit, #card-fields .submit {
+        height:5vh;
+        width:70vw;
+        border-radius:7vw;
+        font-size:5vw;
+        margin:5vh auto 0 5vw;
+    }
+    #netbanking-fields img{
+        width:30vw !important;
+    }
+    #netbanking-fields .axis img{
+        width:42vw !important;
+        margin-left:-4vw;
+    }
+    #netbanking-fields .hdfc img{
+        width:32vw !important;
+        margin-left:1vw;
+    }
+    #netbanking-fields .kotak img{
+        width:32vw !important;
+        margin-left:0vw;
+    }
+    .input h2{
+        font-size:4.5vw !important;
+    }
+    .input input{
+        width:35vw !important;
+        height:5vh !important;
+        border:1px solid black;
+        font-size:4.5vw;
+    }
+    input[name="expiry_date"]{
+        font-size:3.5vw !important;
+    }
+    .input{
+        margin-right:6vw;
+        margin-bottom:-2vh !important;
+    }
+    .troubles {
+        font-size:5vw;
+    }
+    footer {
+        margin-top:5vh !important;
     }
 }

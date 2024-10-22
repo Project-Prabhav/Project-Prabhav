@@ -181,3 +181,59 @@ function adjustDeptHeights() {
 
 document.addEventListener('DOMContentLoaded', adjustDeptHeights);
 window.addEventListener('resize', adjustDeptHeights);
+
+// More People in Department
+document.addEventListener('DOMContentLoaded', function () {
+    const showCount = 3;
+
+    const departments = [2, 3, 4]; // Array of department numbers
+
+    departments.forEach(dept => {
+        const items = document.querySelectorAll(`#department-${dept} .inner-data-${dept}`);
+        const icons = document.querySelectorAll(`#department-${dept} .icons img`);
+        let currentStart = 0;
+
+        function updateDisplay() {
+            items.forEach((item, index) => {
+                item.style.display = (index >= currentStart && index < currentStart + showCount) ? 'block' : 'none';
+            });
+            updateIcons();
+        }
+
+        function updateIcons() {
+            icons.forEach((icon, index) => {
+                if (currentStart === 0) {
+                    icon.style.display = (index < showCount) ? 'block' : 'none';
+                } else if (currentStart + showCount >= items.length) {
+                    icon.style.display = (index === 3) ? 'block' : 'none'; // Show last icon when at the end
+                } else {
+                    icon.style.display = 'none';
+                }
+
+                // Show new worker images when next is clicked
+                const newWorkerImages = document.querySelectorAll(`#department-${dept} .new-worker`);
+                if (currentStart > 0 && currentStart + showCount <= items.length) {
+                    newWorkerImages.forEach((img, imgIndex) => {
+                        img.style.display = imgIndex < (currentStart + showCount) - items.length ? 'block' : 'block';
+                    });
+                }
+            });
+        }
+
+        document.getElementById(`prevBtn${dept}`).onclick = () => {
+            if (currentStart > 0) {
+                currentStart -= showCount;
+                updateDisplay();
+            }
+        };
+
+        document.getElementById(`nextBtn${dept}`).onclick = () => {
+            if (currentStart + showCount < items.length) {
+                currentStart += showCount;
+                updateDisplay();
+            }
+        };
+
+        updateDisplay(); // Initialize display for each department
+    });
+});
