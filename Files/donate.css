@@ -199,14 +199,6 @@ body {
     color: red;
 }
 @media (min-width:320px) and (max-width:749px) {
-    @media (min-width:400px) {
-        .text-box h2{
-            font-size:8vw !important;
-        }
-        .text-box h1{
-            font-size:7.8vw !important;
-        }
-    }
     .support{
         font-size:7vw;
         text-decoration: 2px underline;
