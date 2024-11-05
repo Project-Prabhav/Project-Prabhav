@@ -24,9 +24,23 @@ function showPayment(option) {
     // Clear messages for Net Banking
     document.getElementById('bankMessage').textContent = "";
     document.getElementById('errorMessage').textContent = "";
+
+    // Clear messages for Credit/Debit Cards
+    document.getElementById('cardErrorMessage').textContent = "";
+
+    // Clear input fields for Credit/Debit Cards
+    clearInputFields(['card_number', 'expiry_date', 'cvv']);
 }
 
-
+// Function to clear input fields by name
+function clearInputFields(names) {
+  names.forEach(name => {
+      const inputs = document.getElementsByName(name);
+      inputs.forEach(input => {
+          input.value = ""; // Clear each input field
+      });
+  });
+}
 
 // Initialize default selection
 document.addEventListener('DOMContentLoaded', () => {
@@ -124,14 +138,20 @@ function selectBank(bankName) {
 
 // Function to show error message when the submit button is clicked
 function showErrorMessage(event) {
-    event.preventDefault(); // Prevent form submission or page reload
+  event.preventDefault(); // Prevent form submission or page reload
 
-    const bankMessage = document.getElementById('bankMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    errorMessage.textContent = "Sorry, we cannot process your request at this moment.";
+  const bankMessage = document.getElementById('bankMessage');
+  const errorMessage = document.getElementById('errorMessage');
 
-    // Clear the selected bank message when an error occurs
-    bankMessage.textContent = "";
+  // Check if a bank has been selected
+  if (bankMessage.textContent === "") {
+      // Display the error message for missing bank selection
+      errorMessage.textContent = "Please select your Bank.";
+  } else {
+      // Display the generic "Sorry" message
+      bankMessage.textContent = "";
+      errorMessage.textContent = "Sorry, we cannot process your request at this moment.";
+  }
 }
 
 // Clear messages on page load
@@ -154,14 +174,20 @@ function selectUPI(upiApp) {
 
 // Function to show the error message when the submit button is clicked
 function showUPIErrorMessage(event) {
-    event.preventDefault(); // Prevent form submission or page reload
+  event.preventDefault(); // Prevent form submission or page reload
 
-    const upiMessage = document.getElementById('upiMessage');
-    const upiErrorMessage = document.getElementById('upiErrorMessage');
-    upiErrorMessage.textContent = "Sorry, we cannot process your request at this moment.";
+  const upiMessage = document.getElementById('upiMessage');
+  const upiErrorMessage = document.getElementById('upiErrorMessage');
 
-    // Clear the selected UPI app message when an error occurs
-    upiMessage.textContent = "";
+  // Check if a UPI app has been selected
+  if (upiMessage.textContent === "") {
+      // Display the error message for missing UPI app selection
+      upiErrorMessage.textContent = "Please select a UPI app.";
+  } else {
+      // Display the generic "Sorry" message
+      upiMessage.textContent = "";
+      upiErrorMessage.textContent = "Sorry, we cannot process your request at this moment.";
+  }
 }
 
 // Clear messages on page load
@@ -173,9 +199,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Function to show the error message on submit button click
 function showCardErrorMessage(event) {
-    event.preventDefault(); // Prevent form submission
-    const errorMessage = document.getElementById('cardErrorMessage');
-    errorMessage.textContent = "Sorry, we cannot process your request at this moment.";
+  event.preventDefault(); // Prevent form submission
+
+  const cardErrorMessage = document.getElementById('cardErrorMessage');
+  const cardNumber = document.querySelector('input[name="card_number"]');
+  const expiryDate = document.querySelector('input[name="expiry_date"]');
+  const cvv = document.querySelector('input[name="cvv"]');
+
+  // Check if Card Number is empty or invalid
+  if (!cardNumber.value || !cardNumber.checkValidity()) {
+      cardNumber.reportValidity();
+      cardErrorMessage.textContent = ""; // Clear "Sorry" message
+      return; // Stop further execution if card number is invalid
+  }
+
+  // Check if Expiry Date is empty or invalid
+  if (!expiryDate.value || !expiryDate.checkValidity()) {
+      expiryDate.reportValidity();
+      cardErrorMessage.textContent = ""; // Clear "Sorry" message
+      return; // Stop further execution if expiry date is invalid
+  }
+
+  // Check if CVV is empty or invalid
+  if (!cvv.value || !cvv.checkValidity()) {
+      cvv.reportValidity();
+      cardErrorMessage.textContent = ""; // Clear "Sorry" message
+      return; // Stop further execution if CVV is invalid
+  }
+
+  // If all fields are complete and valid, show the "Sorry" message
+  cardErrorMessage.textContent = "Sorry, we cannot process your request at this moment.";
 }
 
 // Function to hide the error message when any input field is focused
