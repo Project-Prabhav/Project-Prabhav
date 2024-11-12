@@ -55,13 +55,14 @@ footer{
     width: 15vw;
     height:27vh;
 }
-.logo-imgs h1{
+.logo-imgs h2{
     font-size:10vw;
     margin-left:5vw;
     margin-top:7vh;
 }
-.top-content h1{
+.top-content p{
     font-size:10vw;
+    font-weight:900;
     display:inline flex;
 }
 .w1{             /*Here's what w1 and w2 are (line 49)- <h1 class="w1">We</h1> <h1 class="w2">ADDRESS</h1> */
@@ -220,6 +221,8 @@ footer{
   color: rgb(241, 241, 241);
   text-align: center !important;
   font-family: "Bebas Neue", sans-serif;
+  font-size:2.5vw;
+  font-weight: 900;
   letter-spacing: 2px;  
   background: rgb(214, 0, 0);
   transition: 0.5s;
@@ -259,6 +262,9 @@ footer{
           font-size:8vw !important;
           margin-top:3vh !important;
         }
+        .easy{
+          font-size:5vw;
+        }
     }
     @media (max-width:380px){
         .text-box h1{
@@ -268,8 +274,11 @@ footer{
           font-size:8vw !important;
           margin-top:4vh !important;
         }
+        .easy{
+          font-size:4.5vw;
+        }
     }
-    .top-content h1 {
+    .top-content p {
         font-size: 11vw;
         margin-top:0;
         font-weight:bolder !important;
@@ -282,7 +291,7 @@ footer{
         height: auto;
         left:19%;
     }
-    .logo-imgs h1{
+    .logo-imgs p{
       margin-left:2vw;
     }
     .w1{
@@ -486,7 +495,7 @@ footer{
     .text-box h2{
         font-size:8vw !important;
     }
-    .top-content h1 {
+    .top-content p {
         font-size: 9vw;
         margin-top: 1vh;
         font-weight: bolder !important;
@@ -499,7 +508,7 @@ footer{
         height: auto;
         left: 21%;
     }
-    .logo-imgs h1 {
+    .logo-imgs p {
         margin-left: 3vw;
         font-size:10vw !important;
     }
@@ -571,6 +580,9 @@ footer{
         margin-top: 45vh;
         height: 121vh;
     }
+    .easy{
+      font-size:5vw;
+    }
     @media (max-width:800px){
       .sect {
         margin-top: 45vh;
@@ -624,6 +636,9 @@ footer{
   }
   .outer-box{
     height:55vh;
+  }
+  .easy{
+    font-size:3.4vw;
   }
   .text-overlay p {
     font-size:2vw !important;

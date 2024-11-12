@@ -117,7 +117,7 @@ body{
 .dept-4-name{
     background-color: purple;
 }
-.dept-col h1, .dept-col-2 h1{
+.dept-col .h1, .dept-col-2 .h1{
     padding:0;
     margin: 0.5vh 0 0 3vw;
     color:white;
@@ -126,7 +126,7 @@ body{
     display:flex;
     flex-direction: column;
 }
-.dept-name h1{
+.dept-name .h1{
     font-size:1.9vw;
     margin:1.25vh 2vw;
 }
@@ -353,11 +353,11 @@ footer{
         width:92vw;
         height:6vh;
     }
-    .dept-name h1{
+    .dept-name #h1{
         font-size:6.5vw !important;
         margin:1.2vh 5vw !important;
     }
-    h1{
+    h1, .dept-col .h1, .dept-col-2 .h1{
         font-size:8vw !important;
         justify-content:center;
         margin:0.7vh 0 1vh 4vw !important;
@@ -473,6 +473,9 @@ footer{
           font-size:14vw !important;
           margin-top:3vh !important;
         }
+        footer{
+            margin-left:0 !important;
+        }
         @media (max-width:400px){
             .nav-buttons-1 {
                 margin: 35vh 8vw 0 40vw !important;
@@ -557,11 +560,11 @@ footer{
         height:7vh;
         margin-left:12vw;
     }
-    .dept-name h1 {
+    .dept-name .h1 {
         font-size:5.5vw;
         margin:1vh 0 0 4vw;
     }
-    .dept-3-name h1, .dept-2-name h1, .dept-4-name h1{
+    .dept-3-name .h1, .dept-2-name .h1, .dept-4-name .h1{
         font-size:6.5vw;
         margin:0.6vh 0 0 4vw;
     }
@@ -640,7 +643,7 @@ footer{
     }
 }
 @media (min-width:1000px) and (max-width:1199px) and (max-height:900px) {
-    .dept-name h1{
+    .dept-name .h1{
         font-size:1.9vw !important;
         margin:1.5vh 0 0 2vw !important;
     }
@@ -654,7 +657,7 @@ footer{
         width:33vw;
         height:55vh;
     }
-    .dept-col h1, .dept-col-2 h1{
+    .dept-col .h1, .dept-col-2 .h1{
         margin-top:1.5vh !important;
     }
 }
@@ -691,17 +694,17 @@ footer{
             width:90vw;
             height:35vh;
         }
-        h1{
+        h1, .dept-col .h1, .dept-col-2 .h1 {
             font-size:9vw !important;
             margin-top:1.2vh !important;
         }
-        .dept-name h1{
+        .dept-name #h1{
             font-size:7vw !important;
             margin-top:1.7vh !important;
         }
     }
     @media (min-width:360px){
-        h1{
+        h1, .dept-col .h1, .dept-col-2 .h1 {
             font-size:8.5vw !important;
             margin-top:0.7vh !important;
         }
