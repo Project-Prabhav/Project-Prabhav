@@ -41,7 +41,7 @@ body{
     box-shadow:2px 3px 20px 10px whitesmoke;
     border-radius:3vw;
 }
-#get-involved h1{
+#get-involved h2{
     text-align: center;
     font-size: 5vw;
     font-family:"Merriweather", sans-serif ;
@@ -100,7 +100,7 @@ iframe {
     #get-involved{
         margin-bottom:0;
     }
-    #get-involved h1{
+    #get-involved h2{
         text-align: center;
         font-size: 10vw;
     }
@@ -135,7 +135,7 @@ iframe {
     #get-involved{
         margin-bottom:0;
     }
-    #get-involved h1{
+    #get-involved h2{
         text-align: center;
         font-size: 8vw;
     }
@@ -150,7 +150,7 @@ iframe {
     iframe{
         height:80vh;
     }
-    #get-involved h1{
+    #get-involved h2{
         text-align: center;
         font-size: 7vw;
     }
